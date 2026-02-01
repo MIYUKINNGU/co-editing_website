@@ -1,0 +1,126 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.header {
+  width: 100%;
+  height: 3em;
+  border-bottom: #d1d9e0 solid 1px;
+  box-shadow: 0 1px 2px 0 rgb(209 217 224);
+  text-align: left;
+  padding: 0 0.5em 0;
+}
+
+.fileSelect {
+  width: 16%;
+  border-right: rgb(209, 217, 224) solid 1px;
+  box-shadow: 1px 0 2px 0 rgb(209 217 224);
+}
+
+.fileSelect ul {
+  padding: 0;
+}
+
+.fileSelectItem {
+  list-style: none;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0.2em;
+  width: calc(90% - 0.4em);
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.selectingItem {
+  background-color: #EEE !important;
+}
+
+.fileSelectItem:hover {
+  background-color: #F5F5F5;
+}
+
+.editor {
+  flex: 1;
+}
+
+.editorContents {
+  resize: none;
+  min-width: calc(100% - 1em);
+  min-height: calc(100% - 1em);
+  border: 0;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  outline: none;
+  padding: 0 0.5em 0.5em 0;
+  font-size: 1.15em;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+.headerButton {
+  vertical-align: top;
+  margin: 0.1em 0.5em 0.1em;
+  border: #CCC solid 1px;
+  box-shadow: 0 0 1px 0 rgb(209 217 224);
+}
+
+.editState {
+  line-height: 1.75em;
+  font-size: 1.5em;
+  display: inline-block;
+}

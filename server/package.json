@@ -1,0 +1,31 @@
+{
+  "name": "main_server",
+  "version": "1.0.0",
+  "description": "Backend Web Server",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "config": "^4.2.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "inquirer": "^13.2.2",
+    "keypress": "^0.2.1",
+    "keypress.js": "^2.1.5",
+    "node-config": "^0.0.2"
+  },
+  "devDependencies": {
+    "@types/blessed": "^0.1.27",
+    "@types/config": "^3.3.5",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/keypress.js": "^2.1.3",
+    "@types/node": "^25.1.0",
+    "typescript": "^5.9.3"
+  }
+}
