@@ -6,13 +6,17 @@
 それはそうと、これはソースを置いているに過ぎないのでビルド等はお手元でお願いします。あといい加減個人開発でも最初からGitを使ったほうが良い
 
 ## How to use
-server.tsを下のコマンドでコンパイルしてください。```
+server.tsを下のコマンドでコンパイルしてください。
+```
 $ npx tsc
-```カレントディレクトリの親ディレクトリにフォルダができると思うのでそのフォルダ内に`config/default.json`を作成してください。`default.json`には次の内容を書いてください```json
+```
+カレントディレクトリの親ディレクトリにフォルダができると思うのでそのフォルダ内に`config/default.json`を作成してください。`default.json`には次の内容を書いてください
+```json
 {
     "port": 80
 }
-```そして、そのフォルダにpackage.jsonとpackage-lock.jsonをコピーし、さらにそこをカレントディレクトリとして`npm install`を実行、`node server.js`でサーバーが起動します。最後に、`./mdEditor`下に編集可能にするファイルを配置してサーバーサイドは終わりです。
+```
+そして、そのフォルダにpackage.jsonとpackage-lock.jsonをコピーし、さらにそこをカレントディレクトリとして`npm install`を実行、`node server.js`でサーバーが起動します。最後に、`./mdEditor`下に編集可能にするファイルを配置してサーバーサイドは終わりです。
 
 次に、Reactですが、`npm install`したら`npm run dev`でもいいですし、`npm run build`で生成したものを親ディレクトリから見て`./websiteroot`に配置しても行けます。
 
