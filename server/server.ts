@@ -40,9 +40,9 @@ function readFile(filePath: string) {
   return content;
 }
 
-let TOACdata: Map<number, string> = new Map();
-function TopOnAlwaysConsole(stream: string, line: number) {
-    TOACdata.set(line, stream);
+let AOTCdata: Map<number, string> = new Map();
+function AlwaysOnTopConsole(stream: string, line: number) {
+    AOTCdata.set(line, stream);
 }
 
 const app = express();
@@ -135,9 +135,9 @@ app.post("/api/mdEditor/:FileName/Edited", (req, res) => {
     const fileName = req.params.FileName;
     const sessionId = req.body.session;
 
-    TopOnAlwaysConsole(`| content0.md { editor: ${FileStatus["content0.md"]?.editor} , isEditing: ${FileStatus["content0.md"]?.isEditing} }`, 0);
-    TopOnAlwaysConsole(`| content1.md { editor: ${FileStatus["content1.md"]?.editor} , isEditing: ${FileStatus["content1.md"]?.isEditing} }`, 1);
-    TopOnAlwaysConsole(`| Requested file name: ${fileName}, Sent session: ${sessionId}`, 2);
+    AlwaysOnTopConsole(`| content0.md { editor: ${FileStatus["content0.md"]?.editor} , isEditing: ${FileStatus["content0.md"]?.isEditing} }`, 0);
+    AlwaysOnTopConsole(`| content1.md { editor: ${FileStatus["content1.md"]?.editor} , isEditing: ${FileStatus["content1.md"]?.isEditing} }`, 1);
+    AlwaysOnTopConsole(`| Requested file name: ${fileName}, Sent session: ${sessionId}`, 2);
 
     if (FileStatus[fileName] === undefined) {
         console.log(`[POST('/api/mdEditor/${req.params.FileName}/Edited')] Responced HTTP status: 404`);
@@ -162,8 +162,8 @@ setInterval(() => {
         if (FileStatus[fileName].timeOut < Date.now()) FileStatus[fileName].isEditing = false;
     })
     
-    // TOACdata.keys().forEach(( line, index ) => {
-    //     const stream = TOACdata.get(line);
+    // AOTCdata.keys().forEach(( line, index ) => {
+    //     const stream = AOTCdata.get(line);
     //     if (stream === undefined) return;
     //     readline.cursorTo(process.stdout, 0, line);
     //     readline.clearLine(process.stdout, 0);
@@ -175,5 +175,6 @@ setInterval(() => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })
+
 
 app.options(/.*/, cors());
